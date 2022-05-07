@@ -11,11 +11,10 @@ public interface UserApi {
     public User getById(@PathVariable(value = "id") String id);
 
     @GetMapping(value = "/user")
-    public User get(@RequestBody User user);
+    public User get(User user);
 
 //    public void add(com.xisen.userapi.User user);
 //
 //    public void update(com.xisen.userapi.User user);
-
 
 }
