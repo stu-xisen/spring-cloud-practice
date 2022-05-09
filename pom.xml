@@ -12,6 +12,7 @@
         <module>eureka-server-7001</module>
         <module>user-api</module>
         <module>user-service-8001</module>
+        <module>user-consumer-9001</module>
     </modules>
 
     <parent>

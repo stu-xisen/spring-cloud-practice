@@ -2,9 +2,9 @@ package com.xisen.userapi;
 
 public class User {
 
-    String id;
-    String name;
-    Integer age;
+    private String id;
+    private String name;
+    private Integer age;
 
     public String getId() {
         return id;
