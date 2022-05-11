@@ -1,9 +1,7 @@
-package com.xisen.userservice.mapper;
+package com.xisen.userservice8002.mapper;
 
 import com.xisen.userapi.User;
 import org.apache.ibatis.annotations.Mapper;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 

@@ -1,6 +1,7 @@
 package com.xisen.userapi;
 
 import com.xisen.userapi.User;
+import org.springframework.cloud.openfeign.SpringQueryMap;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,7 +12,7 @@ public interface UserApi {
     public User getById(@PathVariable(value = "id") String id);
 
     @GetMapping(value = "/user")
-    public List<User> get(User user);
+    public List<User> get(@SpringQueryMap User user);
 
     @PutMapping(value = "/user")
     public void add(@RequestBody User user);

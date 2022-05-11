@@ -1,0 +1,16 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: user-comsumer
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+
+logging:
+  level:
+    com.xisen.userconsumer.service.UserService: debug
+

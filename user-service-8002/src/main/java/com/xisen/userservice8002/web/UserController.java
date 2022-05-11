@@ -1,9 +1,13 @@
-package com.xisen.userservice.web;
+package com.xisen.userservice8002.web;
 
 import com.xisen.userapi.User;
 import com.xisen.userapi.UserApi;
-import com.xisen.userservice.mapper.UserMapper;
+
+import com.xisen.userservice8002.mapper.UserMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -11,12 +15,18 @@ import java.util.List;
 @RestController
 public class UserController implements UserApi {
 
+    Logger logger = LoggerFactory.getLogger(UserController.class);
+
     @Autowired
     UserMapper userMapper;
+
+    @Value("${server.port}")
+    String port;
 
     @Override
     public User getById(String id) {
         User user = userMapper.getById(id);
+        logger.info("getById port " + port);
         return user;
     }
 

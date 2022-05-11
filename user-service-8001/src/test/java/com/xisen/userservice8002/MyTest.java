@@ -1,13 +1,12 @@
-package com.xisen.userservice;
+package com.xisen.userservice8002;
 
 import com.xisen.userapi.User;
-import com.xisen.userservice.mapper.UserMapper;
+import com.xisen.userservice8001.mapper.UserMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
-import java.util.Random;
 import java.util.UUID;
 
 @SpringBootTest
