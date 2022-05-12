@@ -46,7 +46,7 @@
 
         <dependency>
             <groupId>com.xisen</groupId>
-            <artifactId>user-api</artifactId>
+            <artifactId>api</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 

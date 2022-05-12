@@ -23,6 +23,7 @@ public class UserController {
         return userService.get(user);
     }
 
+
     @PutMapping(value = "/user")
     public void add(@RequestBody User user){
         userService.add(user);

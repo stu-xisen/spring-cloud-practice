@@ -10,12 +10,11 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>eureka-server-7001</module>
-        <module>user-api</module>
+        <module>api</module>
         <module>user-service-8001</module>
         <module>user-consumer-9001</module>
         <module>user-service-8002</module>
         <module>file-service-8003</module>
-        <module>file-api</module>
     </modules>
 
     <parent>

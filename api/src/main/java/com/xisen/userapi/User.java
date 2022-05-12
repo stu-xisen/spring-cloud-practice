@@ -1,10 +1,17 @@
 package com.xisen.userapi;
 
+
+
+import com.xisen.fileapi.File;
+
+import java.util.List;
+
 public class User {
 
     private String id;
     private String name;
     private Integer age;
+    private List<File> fileList;
 
     public String getId() {
         return id;
@@ -28,6 +35,14 @@ public class User {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public List<File> getFileList() {
+        return fileList;
+    }
+
+    public void setFileList(List<File> fileList) {
+        this.fileList = fileList;
     }
 
     @Override

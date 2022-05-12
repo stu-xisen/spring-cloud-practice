@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xisen.fileservice8003.mapper.FileMapper">
+
+    <resultMap id="fileMap" type="com.xisen.fileapi.File">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="issue_date" property="issueDate"/>
+        <association property="manager" javaType="com.xisen.userapi.User">
+            <id column="user_id" property="id"/>
+            <result column="name" property="name"/>
+            <result column="age" property="age"/>
+        </association>
+    </resultMap>
+
+
+    <select id="getById" parameterType="string" resultMap="fileMap">
+        select f.*,u.*
+        from file f
+                 left outer join user u
+                                 on f.user_id = u.id
+        where f.id = #{id}
+    </select>
+
+    <select id="get" parameterType="file" resultMap="fileMap">
+        select f.*, u.*
+        from file f
+        left outer join user u
+        on f.user_id = u.id
+        where 1=1
+        <if test="id != null and id != ''">and f.id = #{id}</if>
+        <if test="name != null and name != ''">and f.name = #{name}</if>
+        <if test="issueDate != null">and f.issue_date = #{issueDate}</if>
+        <if test="manager != null and manager.id != null and manager.id != ''">and user_id = #{manager.id}</if>
+        <if test="manager != null and manager.name != null and manager.name != ''">and u.name = #{manager.name}</if>
+        <if test="manager != null and manager.age != null and manager.age != ''">and u.age = #{manager.age}</if>
+    </select>
+
+    <insert id="add" parameterType="file">
+        insert into file(id,
+                         name,
+                         issue_date,
+                         user_id)
+        values (#{id},
+                #{name},
+                #{issueDate},
+                #{manager.id})
+    </insert>
+
+    <update id="updateById" parameterType="file">
+        update file set
+        <if test="name != null and name != ''">name = #{name},</if>
+        <if test="issueDate !=null">issue_date = #{issueDate},</if>
+        <if test="manager !=null and manager.id !=null and manager.id != ''">user_id = #{manager.id},</if>
+        id = #{id}
+        where id = #{id}
+    </update>
+
+
+</mapper>

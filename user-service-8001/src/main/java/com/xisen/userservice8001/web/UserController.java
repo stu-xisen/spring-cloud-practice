@@ -1,8 +1,11 @@
 package com.xisen.userservice8001.web;
 
+import com.xisen.fileapi.File;
+
 import com.xisen.userapi.User;
 import com.xisen.userapi.UserApi;
 import com.xisen.userservice8001.mapper.UserMapper;
+import com.xisen.userservice8001.service.FileService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,12 +22,19 @@ public class UserController implements UserApi {
     @Autowired
     UserMapper userMapper;
 
+    @Autowired
+    FileService fileService;
+
     @Value("${server.port}")
     String port;
 
     @Override
     public User getById(String id) {
         User user = userMapper.getById(id);
+        File file = new File();
+        file.setManager(user);
+        List<File> files = fileService.get(file);
+        user.setFileList(files);
         logger.info("getById port " + port);
         return user;
     }
