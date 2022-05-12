@@ -1,4 +1,4 @@
-package com.xisen.userservice8002;
+package com.xisen.userservice8001;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;

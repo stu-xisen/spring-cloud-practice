@@ -1,4 +1,4 @@
-package com.xisen.userservice8002.mapper;
+package com.xisen.userservice8001.mapper;
 
 import com.xisen.userapi.User;
 import org.apache.ibatis.annotations.Mapper;

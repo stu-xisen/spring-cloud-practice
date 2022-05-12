@@ -10,6 +10,9 @@ public interface FileApi {
     @GetMapping(value = "/file/{id}")
     public File getById(@PathVariable(value = "id") String id);
 
+//    @PostMapping(value = "/file/get")
+//    public List<File> get(@RequestBody File file);
+
     @GetMapping(value = "/file")
     public List<File> get(@SpringQueryMap File file);
 

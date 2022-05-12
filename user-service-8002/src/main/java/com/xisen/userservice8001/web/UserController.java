@@ -1,9 +1,9 @@
-package com.xisen.userservice8002.web;
+package com.xisen.userservice8001.web;
 
 import com.xisen.userapi.User;
 import com.xisen.userapi.UserApi;
 
-import com.xisen.userservice8002.mapper.UserMapper;
+import com.xisen.userservice8001.mapper.UserMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

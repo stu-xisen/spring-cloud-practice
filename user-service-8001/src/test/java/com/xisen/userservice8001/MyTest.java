@@ -1,4 +1,4 @@
-package com.xisen.userservice8002;
+package com.xisen.userservice8001;
 
 import com.xisen.userapi.User;
 import com.xisen.userservice8001.mapper.UserMapper;

@@ -10,7 +10,7 @@
         <result column="issue_date" property="issueDate"/>
         <association property="manager" javaType="com.xisen.userapi.User">
             <id column="user_id" property="id"/>
-            <result column="name" property="name"/>
+            <result column="uname" property="name"/>
             <result column="age" property="age"/>
         </association>
     </resultMap>
@@ -25,7 +25,10 @@
     </select>
 
     <select id="get" parameterType="file" resultMap="fileMap">
-        select f.*, u.*
+        select f.*,
+               u.id,
+               u.name as uname,
+               u.age
         from file f
         left outer join user u
         on f.user_id = u.id
